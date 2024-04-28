@@ -8,7 +8,7 @@ A Red Hat Developer membership comes with a ton of benefits, including no-cost a
 -  Exclusive content
 -  Access to the Developer Sandbox for Red Hat OpenShift, a shared OpenShift and Kubernetes cluster for practicing your skills
 
-[To Join REd Hat Developer Program](https://developers.redhat.com/register?intcmp=701f2000001OMHaAAO)
+[To join Red Hat Developer Program](https://developers.redhat.com/register?intcmp=701f2000001OMHaAAO)
 
 
 [No-cost Red Hat Enterprise Linux Individual Developer Subscription: FAQs](https://developers.redhat.com/articles/faqs-no-cost-red-hat-enterprise-linux#general)
