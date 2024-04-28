@@ -15,3 +15,5 @@
 [Upgrading from RHEL 8 to RHEL 9](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/upgrading_from_rhel_8_to_rhel_9/index)
 
 [Interactive Lab for in-place  upgrade form RHEL 7 to RHEL8 ](https://www.redhat.com/en/interactive-labs/perform-in-place-upgrade-with-leapp)
+
+[Workshop Exercise - Perform Recommended Remediation](https://aap2.demoredhat.com/exercises/ansible_ripu/1.4-remediate/#workshop-exercise---perform-recommended-remediation)
