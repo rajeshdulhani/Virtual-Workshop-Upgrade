@@ -36,7 +36,7 @@ With Leapp you can upgrade with confidence and benefit from the new features of 
 4] Install the leapp packages.
 
 ~~~
-# yum install leapp-upgrade
+ yum install leapp-upgrade
 ~~~
 
 5] On your RHEL 7 system, perform the pre-upgrade phase which will generate the `/var/log/leapp/leapp-report.txt` file
@@ -64,14 +64,14 @@ The report contains the following risk factor levels:
   b] Manually edit the `/var/log/leapp/answerfile` file, uncomment the confirm line of the file by deleting the # symbol, and confirm your answer as True or False
   
 ~~~
-# leapp answer --section <question_section>.<field_name>=<answer>
+ leapp answer --section <question_section>.<field_name>=<answer>
 ~~~
 
 8] On your RHEL 7 system, start the upgrade process: 
 
 ~~~
 # leapp upgrade --target <target_os_version>
-# reboot 
+# reboot
 ~~~
 
 9] Perform the post upgrade tasks post successfull completion of leapp upgrade phase
@@ -93,7 +93,7 @@ b] Verify that the correct product is installed:
 c] To remove all packages from the exclude list:
 
 ~~~
- # yum config-manager --save --setopt exclude=''
+  yum config-manager --save --setopt exclude=''
 ~~~
 
 d] Remove remaining RHEL 7 packages, including remaining Leapp packages.
@@ -101,43 +101,43 @@ d] Remove remaining RHEL 7 packages, including remaining Leapp packages.
  - Determine old kernel versions:
 
  ~~~
- # cd /lib/modules && ls -d *.el7*
+  cd /lib/modules && ls -d *.el7*
  ~~~
 
  - Remove weak modules from the old kernel. If you have multiple old kernels, repeat the following step for each kernel:
 
 ~~~
-# [ -x /usr/sbin/weak-modules ] && /usr/sbin/weak-modules --remove-kernel <version>
+ [ -x /usr/sbin/weak-modules ] && /usr/sbin/weak-modules --remove-kernel <version>
 ~~~
 
 - Remove the old kernel from the boot loader entry. If you have multiple old kernels, repeat this step for each kernel:
 
 ~~~
-# /bin/kernel-install remove <version> /lib/modules/<version>/vmlinuz
+ /bin/kernel-install remove <version> /lib/modules/<version>/vmlinuz
 ~~~
 
 - Locate remaining RHEL 7 packages:
 
 ~~~
-# rpm -qa | grep -e '\.el[67]' | grep -vE '^(gpg-pubkey|libmodulemd|katello-ca-consumer)' | sort
+ rpm -qa | grep -e '\.el[67]' | grep -vE '^(gpg-pubkey|libmodulemd|katello-ca-consumer)' | sort
 ~~~
 
 - Remove remaining RHEL 7 packages, including old kernel packages, and the kernel-workaround package from your RHEL 8 system.
 
 ~~~
-# yum remove $(rpm -qa | grep -e '\.el[67]' | grep -vE '^(gpg-pubkey|libmodulemd|katello-ca-consumer)' | sort)
+ yum remove $(rpm -qa | grep -e '\.el[67]' | grep -vE '^(gpg-pubkey|libmodulemd|katello-ca-consumer)' | sort)
 ~~~
 
 - Remove remaining Leapp dependency packages:
   
 ~~~
-# yum remove leapp-deps-el8 leapp-repository-deps-el8
+ yum remove leapp-deps-el8 leapp-repository-deps-el8
 ~~~
 
 - Remove any remaining empty directories:
 
 ~~~
-# rm -r /lib/modules/*el7*
+ rm -r /lib/modules/*el7*
 ~~~
 
 9] Verification Steps:
@@ -146,20 +146,20 @@ d] Remove remaining RHEL 7 packages, including remaining Leapp packages.
 
 
 ~~~
-# grubby --info=ALL | grep "\.el7" || echo "Old kernels are not present in the bootloader."
+ grubby --info=ALL | grep "\.el7" || echo "Old kernels are not present in the bootloader."
 ~~~
 
 - Verify that the previously removed rescue kernel and rescue initial RAM disk files have been created for the current kernel:
 
 ~~~
-# ls /boot/vmlinuz-*rescue* /boot/initramfs-*rescue*
-# lsinitrd /boot/initramfs-*rescue*.img | grep -qm1 "$(uname -r)/kernel/" && echo "OK" || echo "FAIL"
+ ls /boot/vmlinuz-*rescue* /boot/initramfs-*rescue*
+ lsinitrd /boot/initramfs-*rescue*.img | grep -qm1 "$(uname -r)/kernel/" && echo "OK" || echo "FAIL"
 ~~~
 
 - Verify the rescue boot entry refers to the existing rescue files. See the grubby output:
 
 ~~~
-# grubby --info $(ls /boot/vmlinuz-*rescue*)
+ grubby --info $(ls /boot/vmlinuz-*rescue*)
 ~~~
 
 
