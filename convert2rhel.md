@@ -74,7 +74,7 @@ Red Hat provides `Convert2RHEL`, a self-service migration tool for users of sele
 
 To check whether you have a valid CentOS release version, enter the following:
 ```
-#cat  /etc/centos-release
+cat  /etc/centos-release
 ```
 The following output shows that this is a valid version:
 ```
@@ -82,7 +82,7 @@ CentOS Linux release 7.9.2009 (Core)
 ```
 ## Step 2: Update your system
 ~~~
-#yum  update  -y
+yum  update  -y
 ~~~
 
 ## Step 3: Secure the packages
@@ -101,7 +101,7 @@ curl -o /etc/yum.repos.d/convert2rhel.repo https://cdn-public.redhat.com/content
 ~~~
 ## Step 5: Install convert2rhel
 ~~~
-#yum install -y convert2rhel
+yum install -y convert2rhel
 ~~~
 
 
@@ -114,7 +114,7 @@ activation_key = <activation_key>
 
 ## Step-6: Reviewing the pre-conversion analysis report
 ~~~
-#convert2rhel analyze
+convert2rhel analyze
 ~~~
 
  Each test results in one of the following statuses:
@@ -128,12 +128,12 @@ activation_key = <activation_key>
 
 ## Step-7: Convert to RHEL
 ~~~
-#convert2rhel --debug
+convert2rhel --debug
 ~~~
 
 ## Step-8: . Reboot
 ~~~
-#reboot
+reboot
 ~~~
 
 ## **Resources:**
