@@ -103,10 +103,58 @@ yum install php-fpm
 
 ## Find RHEL7 packages
 ~~~
-
+rpm -qa |grep el7
+libmcrypt-2.5.8-13.el7.x86_64
+libraqm-0.7.0-4.el7.x86_64
+libwebp7-1.0.3-2.el7.remi.x86_64
+gd3php-2.3.3-7.el7.remi.x86_64
 ~~~
-
 ## Replace RHEL7 packages 
 ~~~
+yum update libmcrypt libraqm libwebp7 gd3php
+~~~
+
+## Remove rpm -e libwebp7  from remi 7 repo 
+~~~
+ yum info libwebp7
+Updating Subscription Management repositories.
+
+This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+
+Last metadata expiration check: 0:05:53 ago on Thu 16 May 2024 02:48:10 PM EDT.
+Installed Packages
+Name         : libwebp7
+Version      : 1.0.3
+Release      : 2.el7.remi
+Architecture : x86_64
+Size         : 787 k
+Source       : libwebp7-1.0.3-2.el7.remi.src.rpm
+Repository   : @System
+Summary      : Library and tools for the WebP graphics format
+URL          : http://webmproject.org/
+License      : BSD-3-Clause
+Description  : WebP is an image format that does lossy compression of digital
+             : photographic images. WebP consists of a codec based on VP8, and a
+             : container based on RIFF. Webmasters, web developers and browser
+             : developers can use WebP to compress, archive and distribute digital
+             : images more efficiently.
+             : 
+             : libwebp7 is designed to be installed beside libwebp.
+~~~
+
 
 ~~~
+rpm -e libwebp7  --nodeps
+~~~
+
+## install libwebp from RHEL8 
+
+~~~
+yum install libwebp
+~~~
+
+## verify for yum issue
+~~~
+package-cleanup --problems
+package-cleanup --dupes
+~~~    
