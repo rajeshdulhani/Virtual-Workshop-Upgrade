@@ -106,6 +106,15 @@ yum install -y convert2rhel
 
 
 If you are converting by using RHSM and have not yet registered the system, update the /etc/convert2rhel.ini file to include the following data: 
+
+Open the file /etc/convert2rhel.ini
+
+~~~
+vi /etc/convert2rhel.ini
+~~~
+
+Save the file using :wq!
+
 ~~~
 [subscription_manager]
 org = <organization_ID>
