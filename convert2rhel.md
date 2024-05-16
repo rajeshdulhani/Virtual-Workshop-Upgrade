@@ -88,7 +88,7 @@ CentOS Linux release 7.9.2009 (Core)
 ## Step 3: Secure the packages
 Download the signing keys to ensure that we are pulling in only Red Hat created and vetted packages .
 ~~~
-#curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release https://www.redhat.com/security/data/fd431d51.txt
+curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release https://www.redhat.com/security/data/fd431d51.txt
 ~~~
 #Copy the SSL certificates from Red Hat Subscription Management, which will allow us to pull packages over a secure channel.
 ~~~
