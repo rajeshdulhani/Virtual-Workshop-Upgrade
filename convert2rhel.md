@@ -97,7 +97,7 @@ curl --create-dirs -o /etc/rhsm/ca/redhat-uep.pem https://ftp.redhat.com/redhat/
 ## Step 4: Download the repository definition
 Download a repository definition to our /etc/yum.repos.d/directory.
 ~~~
-#curl -o /etc/yum.repos.d/convert2rhel.repo https://cdn-public.redhat.com/content/public/repofiles/convert2rhel-for-rhel-7-x86_64.repo
+curl -o /etc/yum.repos.d/convert2rhel.repo https://cdn-public.redhat.com/content/public/repofiles/convert2rhel-for-rhel-7-x86_64.repo
 ~~~
 ## Step 5: Install convert2rhel
 ~~~
