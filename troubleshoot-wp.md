@@ -79,20 +79,11 @@ https://access.redhat.com/downloads/content/package-browser
 
 ## Enable codeready-builder-for-rhel-8-x86_64-rpms repository
 ~~~
- #subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+ subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 ~~~
 ~~~
-#yum update ustr
+yum update ustr
 ~~~
-
-
-
-
-
-
-
-
-
 
 
 ## Install EPEL8 repo ##
