@@ -90,7 +90,7 @@ Download the signing keys to ensure that we are pulling in only Red Hat created 
 ~~~
 curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release https://www.redhat.com/security/data/fd431d51.txt
 ~~~
-#Copy the SSL certificates from Red Hat Subscription Management, which will allow us to pull packages over a secure channel.
+Copy the SSL certificates from Red Hat Subscription Management, which will allow us to pull packages over a secure channel.
 ~~~
 curl --create-dirs -o /etc/rhsm/ca/redhat-uep.pem https://ftp.redhat.com/redhat/convert2rhel/redhat-uep.pem
 ~~~
