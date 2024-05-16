@@ -79,7 +79,8 @@ The report contains the following risk factor levels:
 a] Verify that the current OS version is Red Hat Enterprise Linux 8:
 
 ~~~
-# cat /etc/redhat-release
+# (OVERRIDABLE) IS_LOADED_KERNEL_LATEST::INVALID_KERNEL_VERSION - Invalid kernel version detected
+cat /etc/redhat-release
 # uname -r
 ~~~
 
