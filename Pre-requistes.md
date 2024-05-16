@@ -17,16 +17,21 @@
   https://centos.excellmedia.net/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso
 ~~~
 
--  Use the online Red Hat lab which has the instructions for performing the Convert2RHEL and Leapp upgrade.
 
-**centos lab:** 
+-  **Interactive Labs :**
+
+__Note : Only if you are not able to prepare the VM, we have an option to use the online lab. This is a generic lab prepared for experiencing the convert2rhel and leapp upgrade. Some of the steps or observation which we will follow for the workshop wont be applicable here.__
+
+
+Centos Lab:
 
 ~~~
     https://www.redhat.com/en/interactive-labs/migrate-red-hat-enterprise-linux-centos-linux
 ~~~
 
-**rhel upgrade lab:** 
+Rhel Upgrade Lab:
     
 ~~~
     https://www.redhat.com/en/interactive-labs/perform-in-place-upgrade-with-leapp
 ~~~
+
