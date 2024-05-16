@@ -52,7 +52,7 @@ ustr-1.0.4-16.el7.x86_64
 
 ## Remove remaining RHEL 7 packages, including old kernel packages, and the kernel-workaround package from your RHEL 8 system. 
 ~~~
-yum erase  kernel-3.10.0-1160.114.2.el7.x86_64 kernel-3.10.0-1160.118.1.el7.x86_64
+yum erase  kernel-3.10.0-1160.114.2.el7.x86_64 kernel-3.10.0-1160.118.1.el7.x86_64 remi-release-7.9-6.el7.remi.noarch
 ~~~
 
 ## Remove remaining Leapp dependency packages:
